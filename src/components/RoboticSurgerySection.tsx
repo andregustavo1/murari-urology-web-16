@@ -80,9 +80,9 @@ const RoboticSurgerySection = () => {
             <div className="relative">
               <div className="bg-gold/30 absolute -top-6 -right-6 w-full h-full rounded-lg"></div>
               <img
-                src="https://images.unsplash.com/photo-1582719471384-894fbb16e074?q=80&w=1287"
+                src="/lovable-uploads/17872b92-5a33-4fd7-b700-d81c065d6832.png"
                 alt="Cirurgia Robótica"
-                className="relative z-10 rounded-lg shadow-xl max-h-[500px] object-cover"
+                className="relative z-10 rounded-lg shadow-xl max-h-[500px] w-full object-cover"
               />
             </div>
           </div>

@@ -21,8 +21,8 @@ const HeroSection = () => {
   return (
     <section id="inicio" className="relative min-h-screen flex items-center bg-gradient-to-b from-navy to-navy-dark pt-20">
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute inset-0 bg-navy opacity-50"></div>
-        <div className="w-full h-full bg-[url('https://images.unsplash.com/photo-1631815567771-546a9fdde70e?q=80&w=2071')] bg-cover bg-center opacity-20"></div>
+        <div className="absolute inset-0 bg-navy opacity-70"></div>
+        <div className="w-full h-full bg-[url('/lovable-uploads/16478f91-3bee-44b3-baa9-50735d4aec46.png')] bg-cover bg-center opacity-60"></div>
       </div>
       
       <div className="container mx-auto px-4 md:px-8 relative z-10">
@@ -45,7 +45,7 @@ const HeroSection = () => {
             </Button>
             <Button 
               variant="outline" 
-              className="border-white text-white hover:bg-white/10 transition-all duration-300 px-8 py-6"
+              className="border-white text-white bg-transparent hover:bg-white/10 transition-all duration-300 px-8 py-6"
               onClick={() => scrollToSection('especialidades')}
             >
               Conhecer Especialidades

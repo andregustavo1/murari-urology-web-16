@@ -15,9 +15,15 @@ const Footer = () => {
     <footer className="bg-navy-dark py-12">
       <div className="container mx-auto px-4 md:px-8">
         <div className="flex flex-col md:flex-row justify-between items-center mb-8">
-          <div className="mb-6 md:mb-0">
-            <h3 className="text-white text-xl font-bold">Dr. Heder Murari Borba</h3>
-            <p className="text-white/60 text-sm mt-1">Médico Urologista</p>
+          <div className="mb-6 md:mb-0 flex items-center">
+            <img 
+              src="/lovable-uploads/c7350964-54db-41c4-ab3b-4c2f25d45009.png" 
+              alt="Dr. Heder Murari Borba" 
+              className="h-14 mr-3"
+            />
+            <div>
+              <p className="text-white/60 text-sm mt-1">Médico Urologista</p>
+            </div>
           </div>
           
           <div>

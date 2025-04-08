@@ -30,7 +30,11 @@ const Header = () => {
     <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'glass-header' : 'bg-transparent'}`}>
       <div className="container mx-auto px-4 py-4 flex justify-between items-center">
         <div className="flex items-center">
-          <h1 className="text-xl font-semibold text-white">Dr. Heder Murari Borba</h1>
+          <img 
+            src="/lovable-uploads/c7350964-54db-41c4-ab3b-4c2f25d45009.png" 
+            alt="Dr. Heder Murari Borba" 
+            className="h-12 mr-3"
+          />
         </div>
         
         <nav className="hidden md:flex items-center space-x-8">

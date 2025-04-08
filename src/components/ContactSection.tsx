@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { Button } from "@/components/ui/button";
-import { Phone, Mail, MapPin, Clock, ArrowUpRight } from 'lucide-react';
+import { Phone, Mail, MapPin, ArrowUpRight } from 'lucide-react';
 
 interface ContactInfoProps {
   icon: React.ElementType;
@@ -95,18 +95,6 @@ const ContactSection = () => {
                 </div>
               }
               delay={300}
-            />
-            
-            <ContactInfo 
-              icon={Clock} 
-              title="Horários de Atendimento" 
-              content={
-                <div>
-                  <p>Segunda à Sexta: 8h às 18h</p>
-                  <p className="text-sm mt-1">Consultas mediante agendamento prévio</p>
-                </div>
-              }
-              delay={400}
             />
             
             <div className="mt-10 animate-fade-in" style={{ animationDelay: "500ms" }}>
