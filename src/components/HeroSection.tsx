@@ -21,8 +21,8 @@ const HeroSection = () => {
   return (
     <section id="inicio" className="relative min-h-screen flex items-center bg-gradient-to-b from-navy to-navy-dark pt-20">
       <div className="absolute inset-0 overflow-hidden">
-        <div className="w-full h-full bg-[url('/lovable-uploads/16478f91-3bee-44b3-baa9-50735d4aec46.png')] bg-cover bg-center"></div>
-        <div className="absolute inset-0 bg-navy-dark opacity-50"></div>
+        <div className="w-full h-full bg-[url('/lovable-uploads/image.png')] bg-cover bg-center"></div>
+        <div className="absolute inset-0 bg-gradient-to-br to-navy-dark/70 from-blue-950/90"></div>
       </div>
       
       <div className="container mx-auto px-4 md:px-8 relative z-10">
