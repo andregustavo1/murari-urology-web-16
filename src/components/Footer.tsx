@@ -1,14 +1,24 @@
-
 import React from 'react';
 import { ArrowUp } from 'lucide-react';
 import { Button } from "@/components/ui/button";
 
 const Footer = () => {
+  const address = "SHLS Conjunto A Bloco B Térreo Loja 3, Edifício OHB, Asa Sul. CEP:70390-906";
+  const phone = "(61) 4004-3101";
+
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
       behavior: 'smooth'
     });
+  };
+
+  const handlePhoneClick = () => {
+    window.location.href = `tel:${phone.replace(/[^0-9]/g, '')}`;
+  };
+
+  const handleAddressClick = () => {
+    window.open(`https://www.google.com/maps/place/${encodeURIComponent(address)}`, '_blank');
   };
 
   return (
@@ -76,17 +86,19 @@ const Footer = () => {
             <h4 className="text-gold text-sm font-medium mb-4">Contato</h4>
             <ul className="space-y-2">
               <li>
-                <a href="tel:+5561991663932" className="text-white/70 hover:text-gold text-sm transition-colors duration-300">
-                  (61) 99166-3932
-                </a>
+                <button onClick={handlePhoneClick} className="text-white/70 hover:text-gold text-sm transition-colors duration-300">
+                  {phone}
+                </button>
               </li>
               <li>
                 <a href="mailto:drhederurologia@gmail.com" className="text-white/70 hover:text-gold text-sm transition-colors duration-300">
                   drhederurologia@gmail.com
                 </a>
               </li>
-              <li className="text-white/70 text-sm">
-                Brasília/DF
+              <li>
+                <button onClick={handleAddressClick} className="text-white/70 hover:text-gold text-sm transition-colors duration-300 text-left">
+                  {address}
+                </button>
               </li>
             </ul>
           </div>

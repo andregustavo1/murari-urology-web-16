@@ -7,10 +7,10 @@ export function ContactSection() {
   const phone = "(61) 4004-3101";
   const email = "contato@hedermurari.com.br";
   
-  const googleMapsUrl = `https://www.google.com/maps/place/SHLS+Conjunto+A+Bloco+B+Térreo+Loja+3,+Edifício+OHB,+Asa+Sul`;
+  const googleMapsUrl = `https://www.google.com/maps/place/${encodeURIComponent(address)}`;
 
   const handlePhoneClick = () => {
-    window.location.href = `tel:${phone}`;
+    window.location.href = `tel:${phone.replace(/[^0-9]/g, '')}`;
   };
 
   const handleEmailClick = () => {
@@ -61,7 +61,7 @@ export function ContactSection() {
           </div>
           <div className="w-full mt-8">
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3839.4332084917424!2d-47.91591792374979!3d-15.799899384728792!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x935a3b1e89f63beb%3A0x9f0c6e7e8f5e1e7a!2sSHLS%20Conjunto%20A%20Bloco%20B%20T%C3%A9rreo%20Loja%203%2C%20Edif%C3%ADcio%20OHB%2C%20Asa%20Sul!5e0!3m2!1spt-BR!2sbr!4v1708988327981!5m2!1spt-BR!2sbr"
+              src={`https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3839.4332084917424!2d-47.91591792374979!3d-15.799899384728792!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x935a3b1e89f63beb%3A0x9f0c6e7e8f5e1e7a!2sSHLS%20Conjunto%20A%20Bloco%20B%20T%C3%A9rreo%20Loja%203%2C%20Edif%C3%ADcio%20OHB%2C%20Asa%20Sul!5e0!3m2!1spt-BR!2sbr!4v1708988327981!5m2!1spt-BR!2sbr`}
               width="100%"
               height="450"
               style={{ border: 0 }}
@@ -69,7 +69,7 @@ export function ContactSection() {
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
               className="rounded-lg"
-            ></iframe>
+            />
           </div>
         </div>
       </div>

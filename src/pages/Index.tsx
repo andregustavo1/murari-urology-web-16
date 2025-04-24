@@ -6,7 +6,7 @@ import AboutSection from '../components/AboutSection';
 import SpecialtiesSection from '../components/SpecialtiesSection';
 import RoboticSurgerySection from '../components/RoboticSurgerySection';
 import TimelineSection from '../components/TimelineSection';
-import ContactSection from '../components/ContactSection';
+import { ContactSection } from '../components/ContactSection';
 import CTASection from '../components/CTASection';
 import Footer from '../components/Footer';
 import ScrollProgress from '../components/ScrollProgress';
