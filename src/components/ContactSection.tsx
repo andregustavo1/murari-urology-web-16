@@ -36,10 +36,10 @@ export function ContactSection() {
           <div className="mx-auto w-full max-w-sm space-y-4">
             <Button 
               variant="outline" 
-              className="w-full flex items-center justify-start gap-2 py-6"
+              className="w-full flex items-center justify-start gap-2 py-6 whitespace-normal break-words h-auto"
               onClick={handleAddressClick}
             >
-              <MapPin className="h-5 w-5 text-primary" />
+              <MapPin className="h-5 w-5 text-primary flex-shrink-0" />
               <span className="text-left">{address}</span>
             </Button>
             <Button 
