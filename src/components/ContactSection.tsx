@@ -1,128 +1,78 @@
 
-import React from 'react';
-import { Button } from "@/components/ui/button";
-import { Phone, Mail, MapPin, ArrowUpRight } from 'lucide-react';
+import { MapPin, Phone, Mail } from "lucide-react";
+import { Button } from "./ui/button";
 
-interface ContactInfoProps {
-  icon: React.ElementType;
-  title: string;
-  content: React.ReactNode;
-  delay: number;
-}
+export function ContactSection() {
+  const address = "SHLS Conjunto A Bloco B Térreo Loja 3, Edifício OHB, Asa Sul. CEP:70390-906";
+  const phone = "(61) 4004-3101";
+  const email = "contato@hedermurari.com.br";
+  
+  const googleMapsUrl = `https://www.google.com/maps/place/SHLS+Conjunto+A+Bloco+B+Térreo+Loja+3,+Edifício+OHB,+Asa+Sul`;
 
-const ContactInfo = ({ icon: Icon, title, content, delay }: ContactInfoProps) => {
-  return (
-    <div className="flex items-start mb-8 animate-fade-in" style={{ animationDelay: `${delay}ms` }}>
-      <div className="bg-navy/10 p-3 rounded-full mr-4">
-        <Icon className="h-5 w-5 text-navy" />
-      </div>
-      <div>
-        <h3 className="font-medium text-navy mb-1">{title}</h3>
-        <div className="text-navy-light/80">{content}</div>
-      </div>
-    </div>
-  );
-};
-
-const ContactSection = () => {
-  const handleWhatsAppClick = (e: React.MouseEvent) => {
-    e.preventDefault();
-    const phone = "5561991663932";
-    const message = "Olá, gostaria de agendar uma consulta com o Dr. Heder Murari Borba.";
-    window.open(`https://wa.me/${phone}?text=${encodeURIComponent(message)}`, "_blank");
+  const handlePhoneClick = () => {
+    window.location.href = `tel:${phone}`;
   };
 
-  const handleEmailClick = (e: React.MouseEvent) => {
-    e.preventDefault();
-    window.location.href = "mailto:drhederurologia@gmail.com";
+  const handleEmailClick = () => {
+    window.location.href = `mailto:${email}`;
   };
 
-  const handlePhoneClick = (e: React.MouseEvent) => {
-    e.preventDefault();
-    window.location.href = "tel:+5561991663932";
+  const handleAddressClick = () => {
+    window.open(googleMapsUrl, '_blank');
   };
 
   return (
-    <section id="contato" className="py-24 bg-neutral-gray">
-      <div className="container mx-auto px-4 md:px-8">
-        <div className="text-center mb-16 animate-fade-in">
-          <h5 className="text-navy/70 mb-2 tracking-wider text-sm">FALE CONOSCO</h5>
-          <h2 className="text-3xl md:text-4xl font-bold text-navy mb-4">Contato e Agendamento</h2>
-          <p className="text-navy-light max-w-2xl mx-auto">
-            Agende sua consulta e cuide da sua saúde com o atendimento especializado do Dr. Heder Murari Borba
-          </p>
-        </div>
-        
-        <div className="flex flex-col lg:flex-row gap-12">
-          <div className="lg:w-1/2 animate-fade-in-right">
-            <ContactInfo 
-              icon={Phone} 
-              title="Telefone para Agendamento" 
-              content={
-                <a 
-                  href="tel:+5561991663932" 
-                  className="text-navy-light hover:text-navy transition-colors duration-300"
-                  onClick={handlePhoneClick}
-                >
-                  (61) 99166-3932
-                </a>
-              }
-              delay={100}
-            />
-            
-            <ContactInfo 
-              icon={Mail} 
-              title="E-mail" 
-              content={
-                <a 
-                  href="mailto:drhederurologia@gmail.com" 
-                  className="text-navy-light hover:text-navy transition-colors duration-300"
-                  onClick={handleEmailClick}
-                >
-                  drhederurologia@gmail.com
-                </a>
-              }
-              delay={200}
-            />
-            
-            <ContactInfo 
-              icon={MapPin} 
-              title="Local de Atendimento" 
-              content={
-                <div>
-                  <p>Instituto Virtus</p>
-                  <p className="text-sm mt-1">Brasília/DF</p>
-                </div>
-              }
-              delay={300}
-            />
-            
-            <div className="mt-10 animate-fade-in" style={{ animationDelay: "500ms" }}>
-              <Button 
-                className="bg-navy hover:bg-navy-light text-white font-medium transition-all duration-300"
-                size="lg"
-                onClick={handleWhatsAppClick}
-              >
-                Agendar Consulta
-                <ArrowUpRight className="ml-2 h-4 w-4" />
-              </Button>
-            </div>
+    <section id="contato" className="w-full py-12 md:py-24 lg:py-32 bg-secondary">
+      <div className="container px-4 md:px-6">
+        <div className="flex flex-col items-center justify-center space-y-4 text-center">
+          <div className="space-y-2">
+            <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl text-primary">
+              Contato e Agendamento
+            </h2>
+            <p className="max-w-[900px] text-zinc-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-zinc-400">
+              Entre em contato conosco para agendar sua consulta ou tirar dúvidas.
+            </p>
           </div>
-          
-          <div className="lg:w-1/2 animate-fade-in-left">
-            <div className="relative h-full min-h-[400px]">
-              <div className="bg-gold/20 absolute -top-6 -left-6 w-full h-full rounded-lg"></div>
-              <img
-                src="https://images.unsplash.com/photo-1504813184591-01572f98c85f?q=80&w=2071"
-                alt="Consultório Dr. Heder Murari Borba"
-                className="relative z-10 rounded-lg shadow-xl h-full w-full object-cover"
-              />
-            </div>
+          <div className="mx-auto w-full max-w-sm space-y-4">
+            <Button 
+              variant="outline" 
+              className="w-full flex items-center justify-start gap-2 py-6"
+              onClick={handleAddressClick}
+            >
+              <MapPin className="h-5 w-5 text-primary" />
+              <span className="text-left">{address}</span>
+            </Button>
+            <Button 
+              variant="outline" 
+              className="w-full flex items-center justify-start gap-2 py-6"
+              onClick={handlePhoneClick}
+            >
+              <Phone className="h-5 w-5 text-primary" />
+              <span>{phone}</span>
+            </Button>
+            <Button 
+              variant="outline" 
+              className="w-full flex items-center justify-start gap-2 py-6"
+              onClick={handleEmailClick}
+            >
+              <Mail className="h-5 w-5 text-primary" />
+              <span>{email}</span>
+            </Button>
+          </div>
+          <div className="w-full mt-8">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3839.4332084917424!2d-47.91591792374979!3d-15.799899384728792!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x935a3b1e89f63beb%3A0x9f0c6e7e8f5e1e7a!2sSHLS%20Conjunto%20A%20Bloco%20B%20T%C3%A9rreo%20Loja%203%2C%20Edif%C3%ADcio%20OHB%2C%20Asa%20Sul!5e0!3m2!1spt-BR!2sbr!4v1708988327981!5m2!1spt-BR!2sbr"
+              width="100%"
+              height="450"
+              style={{ border: 0 }}
+              allowFullScreen={true}
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              className="rounded-lg"
+            ></iframe>
           </div>
         </div>
       </div>
     </section>
   );
-};
-
-export default ContactSection;
+}
